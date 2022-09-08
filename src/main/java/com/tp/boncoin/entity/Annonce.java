@@ -19,7 +19,7 @@ public class Annonce {
 	private String title ; 
 	private String description ; 
 	private int idUser;
-	private Double price; 
+	private int price; 
 	private Date datePublication ;
 	
 	
@@ -33,7 +33,7 @@ public class Annonce {
 
 
 
-	public Annonce(int id, String title, String description, int idUser, Double price, Date datePublication) {
+	public Annonce(int id, String title, String description, int idUser, int price, Date datePublication) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -93,13 +93,13 @@ public class Annonce {
 
 
 
-	public Double getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
 
 
-	public void setPrice(Double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

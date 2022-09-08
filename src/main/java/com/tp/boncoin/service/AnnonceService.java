@@ -51,4 +51,13 @@ public class AnnonceService {
 		
 	}
 	
+	public List<Annonce> getAllAnnonceOfUser(int id ){
+		
+		return this.annonces.getAnnounceOfGivenUser(id);
+	}
+	
+	public List<Annonce> getDataByPrice(int price){
+		
+		return this.annonces.getAnnonceByPrice(price);
+	}
 }
