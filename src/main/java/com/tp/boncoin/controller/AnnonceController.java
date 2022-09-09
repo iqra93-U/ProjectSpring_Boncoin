@@ -66,4 +66,11 @@ public class AnnonceController {
 	public List<Annonce> getListOfAnnonceByPrice(@PathVariable int price){
 		return this.services.getDataByPrice(price);
 	}
+	
+	@GetMapping("/title/{title}")
+	
+	public List<Annonce> getAnnonceByTitle(@PathVariable String title){
+		
+		return this.services.getAnnonceByTitle(title);
+	}
 }

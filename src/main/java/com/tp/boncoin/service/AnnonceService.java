@@ -35,7 +35,7 @@ public class AnnonceService {
 		newannonce.setDescription(a.getDescription());
 		newannonce.setIdUser(a.getIdUser());
 		newannonce.setPrice(a.getPrice());
-		newannonce.setDatePublication(a.getDatePublication());
+
 		
 		annonces.save(newannonce);
 		return newannonce;
@@ -59,5 +59,10 @@ public class AnnonceService {
 	public List<Annonce> getDataByPrice(int price){
 		
 		return this.annonces.getAnnonceByPrice(price);
+	}
+	
+	public List<Annonce> getAnnonceByTitle(String title){
+		
+		return this.annonces.getAnnonceByTitle(title);
 	}
 }

@@ -51,5 +51,10 @@ public class MessageService {
 		
 		return this.messages.getMessageById(id);
 	}
+	
+	public List<Message> getAnnonceByMessageId(int id ){
+		
+		return this.messages.getMessagebyAnnonceId(id);
+	}
 
 }

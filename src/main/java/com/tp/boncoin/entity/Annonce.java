@@ -1,10 +1,12 @@
 package com.tp.boncoin.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity
@@ -20,7 +22,9 @@ public class Annonce {
 	private String description ; 
 	private int idUser;
 	private int price; 
-	private Date datePublication ;
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
+	private Date datePublication = new Date() ;
 	
 	
 	

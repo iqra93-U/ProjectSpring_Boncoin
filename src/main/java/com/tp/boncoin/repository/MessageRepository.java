@@ -13,4 +13,7 @@ public interface MessageRepository extends JpaRepository<Message , Integer>{
 	@Query("SELECT m FROM Message m WHERE m.idAnnonce = :id")
 	public List<Message> getMessageById(@Param ("id") int id);
 	
+	@Query("SELECT m FROM Message m WHERE m.idAnnonce = :id Order by idAnnonce ASC ")
+	public List<Message> getMessagebyAnnonceId(@Param("id") int id);
+	
 }

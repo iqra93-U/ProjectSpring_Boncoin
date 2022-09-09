@@ -59,4 +59,12 @@ public class MessageController {
 		return this.servicesM.allMessagesforEachAnnonce(id);
 		
 	}
+	
+	@GetMapping("/messagesannonce/{id}")
+	
+	public List<Message> getAnnonceByMessageId(@PathVariable int id){
+		
+		return this.servicesM.getAnnonceByMessageId(id);
+		
+	}
 }
