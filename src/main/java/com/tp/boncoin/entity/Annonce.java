@@ -1,10 +1,12 @@
 package com.tp.boncoin.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity
@@ -19,8 +21,10 @@ public class Annonce {
 	private String title ; 
 	private String description ; 
 	private int idUser;
-	private Double price; 
-	private Date datePublication ;
+	private int price; 
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
+	private Date datePublication = new Date() ;
 	
 	
 	
@@ -33,7 +37,7 @@ public class Annonce {
 
 
 
-	public Annonce(int id, String title, String description, int idUser, Double price, Date datePublication) {
+	public Annonce(int id, String title, String description, int idUser, int price, Date datePublication) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -93,13 +97,13 @@ public class Annonce {
 
 
 
-	public Double getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
 
 
-	public void setPrice(Double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

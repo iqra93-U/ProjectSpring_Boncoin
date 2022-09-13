@@ -46,5 +46,15 @@ public class MessageService {
 		return "id not found" + id ;
 		
 	}
+	
+	public List<Message> allMessagesforEachAnnonce(int id){
+		
+		return this.messages.getMessageById(id);
+	}
+	
+	public List<Message> getAnnonceByMessageId(int id ){
+		
+		return this.messages.getMessagebyAnnonceId(id);
+	}
 
 }

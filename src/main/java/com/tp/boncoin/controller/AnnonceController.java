@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -51,5 +52,25 @@ public class AnnonceController {
 		services.deleteAnnonce(id);
 		
 		
+	}
+	
+	@GetMapping("/list/{id}")
+	
+	public List<Annonce> getListOfEachUser(@PathVariable int id){
+		
+		return this.services.getAllAnnonceOfUser(id);
+	}
+	
+	@GetMapping("/pricelist/{price}")
+	
+	public List<Annonce> getListOfAnnonceByPrice(@PathVariable int price){
+		return this.services.getDataByPrice(price);
+	}
+	
+	@GetMapping("/title/{title}")
+	
+	public List<Annonce> getAnnonceByTitle(@PathVariable String title){
+		
+		return this.services.getAnnonceByTitle(title);
 	}
 }
